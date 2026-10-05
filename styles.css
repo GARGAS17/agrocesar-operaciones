@@ -1,174 +1,388 @@
-/* VARIABLES Y ESTILOS BASE - MFE OPERACIONES (ADMIN) */
+/* ===================================================
+   MFE Operaciones — AgroCesar
+   Design System v2.0
+=================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Layout base --- */
 .agro-op-wrapper {
-  --op-primary: #3b82f6; /* Azul moderno para admin */
-  --op-primary-hover: #2563eb;
-  --op-surface: #ffffff;
-  --op-bg: #f1f5f9;
-  --op-text-main: #0f172a;
-  --op-text-muted: #64748b;
-  --op-border: #e2e8f0;
-  
-  font-family: var(--agro-fuente, 'Inter', system-ui, -apple-system, sans-serif);
-  background-color: var(--op-bg);
-  min-height: 100vh;
   display: flex;
-  color: var(--op-text-main);
-  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
 }
 
-.agro-op-wrapper * {
-  box-sizing: border-box;
-}
-
-/* SIDEBAR ELEGANTE */
+/* --- Sidebar --- */
 .agro-op-sidebar {
-  width: 280px;
+  width: 220px;
+  min-height: 100vh;
   background: #0f172a;
-  color: white;
-  padding: 30px 20px;
+  color: #e2e8f0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .agro-op-brand {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 24px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4ade80;
+  border-bottom: 1px solid #1e293b;
 }
 
 .agro-op-brand svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--op-primary);
+  width: 22px;
+  height: 22px;
+  fill: #4ade80;
 }
 
-.agro-op-nav-item {
-  padding: 12px 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #94a3b8;
-}
-
-.agro-op-nav-item:hover, .agro-op-nav-item.active {
-  background: rgba(59, 130, 246, 0.15);
-  color: white;
-}
-
-.agro-op-nav-item.active {
-  border-left: 4px solid var(--op-primary);
-}
-
-/* ÁREA PRINCIPAL */
-.agro-op-main {
-  flex: 1;
-  padding: 40px;
-  overflow-y: auto;
-}
-
-.agro-op-header {
-  margin-bottom: 30px;
-}
-
-.agro-op-header h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.agro-op-header p {
-  color: var(--op-text-muted);
-  margin-top: 5px;
-}
-
-/* TARJETA FORMULARIO (GLASSMORPHISM SUAVE) */
-.agro-op-card {
-  background: var(--op-surface);
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  border: 1px solid var(--op-border);
-  max-width: 600px;
-}
-
-.agro-op-form-group {
-  margin-bottom: 20px;
-}
-
-.agro-op-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
-  color: var(--op-text-main);
-}
-
-.agro-op-input, .agro-op-select {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid var(--op-border);
-  border-radius: 10px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: all 0.3s;
-  background: #f8fafc;
-}
-
-.agro-op-input:focus, .agro-op-select:focus {
-  outline: none;
-  border-color: var(--op-primary);
-  background: white;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-}
-
-.agro-op-btn {
-  background: var(--op-primary);
-  color: white;
-  border: none;
-  padding: 14px 24px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.3s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.agro-op-btn:hover {
-  background: var(--op-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
-}
-
-/* ESTADOS DE ÉXITO */
-.agro-op-alert {
-  padding: 16px;
-  border-radius: 10px;
-  background: #d1fae5;
-  color: #065f46;
-  border: 1px solid #34d399;
-  margin-bottom: 20px;
-  font-weight: 600;
+/* --- User card in sidebar --- */
+.agro-op-user {
   display: flex;
   align-items: center;
   gap: 10px;
-  animation: slideIn 0.3s ease-out;
+  padding: 16px 20px;
+  border-bottom: 1px solid #1e293b;
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+.agro-op-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+.agro-op-user-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.agro-op-user-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.agro-op-user-role {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+/* --- Navigation --- */
+.agro-op-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  gap: 2px;
+}
+
+.agro-op-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  border-radius: 0;
+}
+
+.agro-op-nav-item:hover {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.agro-op-nav-item.active {
+  background: #1e3a5f;
+  color: #4ade80;
+  font-weight: 600;
+  border-right: 3px solid #4ade80;
+}
+
+.agro-op-nav-icon {
+  font-size: 1rem;
+}
+
+/* --- Main content --- */
+.agro-op-main {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+/* --- Page header --- */
+.agro-op-page-header {
+  margin-bottom: 24px;
+}
+
+.agro-op-page-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #0f172a;
+}
+
+.agro-op-page-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* --- Cards --- */
+.agro-op-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+  margin-bottom: 20px;
+}
+
+.agro-op-card--no-pad {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* --- Form grid --- */
+.agro-op-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.agro-op-col-2 {
+  grid-column: span 2;
+}
+
+.agro-op-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.agro-op-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.agro-op-input,
+.agro-op-select {
+  padding: 10px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.agro-op-input:focus,
+.agro-op-select:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
+  background: #fff;
+}
+
+.agro-op-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* --- Button --- */
+.agro-op-form-actions {
+  margin-top: 24px;
+}
+
+.agro-op-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px rgba(22,163,74,0.4);
+}
+
+.agro-op-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(22,163,74,0.45);
+}
+
+.agro-op-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Alerts --- */
+.agro-op-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.agro-op-alert--success {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.agro-op-alert--error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* --- Filters --- */
+.agro-op-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.agro-op-filter-btn {
+  padding: 6px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  color: #64748b;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.agro-op-filter-btn:hover,
+.agro-op-filter-btn.active {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+/* --- Tables --- */
+.agro-op-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.agro-op-table thead {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.agro-op-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.agro-op-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #374151;
+}
+
+.agro-op-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.agro-op-id    { font-family: monospace; color: #6366f1; font-size: 0.82rem; }
+.agro-op-money { font-weight: 600; }
+.agro-op-money--green { color: #16a34a; }
+.agro-op-money--red   { color: #dc2626; }
+.agro-op-empty { padding: 40px; text-align: center; color: #94a3b8; }
+
+/* --- Badge --- */
+.agro-op-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- Stats row (liquidaciones) --- */
+.agro-op-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.agro-op-stat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 4px solid transparent;
+}
+
+.agro-op-stat--green  { border-color: #22c55e; }
+.agro-op-stat--yellow { border-color: #eab308; }
+.agro-op-stat--blue   { border-color: #3b82f6; }
+
+.agro-op-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.agro-op-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
 }

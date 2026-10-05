@@ -2,10 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=./contrato.html">
-  <title>MFE Operaciones — AgroCesar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Productor — AgroCesar Operaciones</title>
+  <script type="module" src="./main.js"></script>
 </head>
-<body>
-  <p>Redirigiendo a <a href="./contrato.html">MFE Operaciones</a>...</p>
+<body style="margin:0; padding:0; background:#f1f5f9;">
+  <div id="mfe-root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.mountAgroOperaciones('mfe-root', {
+        usuario: { nombre: 'Demo Productor', rol: 'productor' }
+      });
+    });
+  </script>
 </body>
 </html>
