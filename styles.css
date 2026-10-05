@@ -5,11 +5,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* --- Layout base --- */
+:root {
+  --agro-primario: #2e7d32;
+  --agro-secundario: #fbc02d;
+  --agro-fuente: 'Inter', sans-serif;
+  --agro-fondo: #f9fafb;
+  --agro-espaciado-md: 16px;
+}
+
 .agro-op-wrapper {
   display: flex;
   min-height: 100vh;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #f1f5f9;
+  font-family: var(--agro-fuente);
+  background: var(--agro-fondo);
   color: #1e293b;
 }
 
@@ -32,14 +40,14 @@
   padding: 24px 20px;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #4ade80;
+  color: var(--agro-primario);
   border-bottom: 1px solid #1e293b;
 }
 
 .agro-op-brand svg {
   width: 22px;
   height: 22px;
-  fill: #4ade80;
+  fill: var(--agro-primario);
 }
 
 /* --- User card in sidebar --- */
@@ -55,7 +63,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4ade80, #22c55e);
+  background: linear-gradient(135deg, var(--agro-primario), var(--agro-primario));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,9 +125,9 @@
 
 .agro-op-nav-item.active {
   background: #1e3a5f;
-  color: #4ade80;
+  color: var(--agro-primario);
   font-weight: 600;
-  border-right: 3px solid #4ade80;
+  border-right: 3px solid var(--agro-primario);
 }
 
 .agro-op-nav-icon {
@@ -207,7 +215,7 @@
 
 .agro-op-input:focus,
 .agro-op-select:focus {
-  border-color: #22c55e;
+  border-color: var(--agro-primario);
   box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
   background: #fff;
 }
@@ -226,7 +234,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #16a34a, #22c55e);
+  background: linear-gradient(135deg, var(--agro-primario), var(--agro-primario));
   color: #fff;
   border: none;
   padding: 12px 28px;
@@ -295,9 +303,9 @@
 
 .agro-op-filter-btn:hover,
 .agro-op-filter-btn.active {
-  background: #16a34a;
+  background: var(--agro-primario);
   color: #fff;
-  border-color: #16a34a;
+  border-color: var(--agro-primario);
 }
 
 /* --- Tables --- */
@@ -334,7 +342,7 @@
 
 .agro-op-id    { font-family: monospace; color: #6366f1; font-size: 0.82rem; }
 .agro-op-money { font-weight: 600; }
-.agro-op-money--green { color: #16a34a; }
+.agro-op-money--green { color: var(--agro-primario); }
 .agro-op-money--red   { color: #dc2626; }
 .agro-op-empty { padding: 40px; text-align: center; color: #94a3b8; }
 
@@ -369,8 +377,8 @@
   border-left: 4px solid transparent;
 }
 
-.agro-op-stat--green  { border-color: #22c55e; }
-.agro-op-stat--yellow { border-color: #eab308; }
+.agro-op-stat--green  { border-color: var(--agro-primario); }
+.agro-op-stat--yellow { border-color: var(--agro-secundario); }
 .agro-op-stat--blue   { border-color: #3b82f6; }
 
 .agro-op-stat-label {
