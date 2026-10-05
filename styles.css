@@ -1,0 +1,174 @@
+/* VARIABLES Y ESTILOS BASE - MFE OPERACIONES (ADMIN) */
+.agro-op-wrapper {
+  --op-primary: #3b82f6; /* Azul moderno para admin */
+  --op-primary-hover: #2563eb;
+  --op-surface: #ffffff;
+  --op-bg: #f1f5f9;
+  --op-text-main: #0f172a;
+  --op-text-muted: #64748b;
+  --op-border: #e2e8f0;
+  
+  font-family: var(--agro-fuente, 'Inter', system-ui, -apple-system, sans-serif);
+  background-color: var(--op-bg);
+  min-height: 100vh;
+  display: flex;
+  color: var(--op-text-main);
+  box-sizing: border-box;
+}
+
+.agro-op-wrapper * {
+  box-sizing: border-box;
+}
+
+/* SIDEBAR ELEGANTE */
+.agro-op-sidebar {
+  width: 280px;
+  background: #0f172a;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.agro-op-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.agro-op-brand svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--op-primary);
+}
+
+.agro-op-nav-item {
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #94a3b8;
+}
+
+.agro-op-nav-item:hover, .agro-op-nav-item.active {
+  background: rgba(59, 130, 246, 0.15);
+  color: white;
+}
+
+.agro-op-nav-item.active {
+  border-left: 4px solid var(--op-primary);
+}
+
+/* ÁREA PRINCIPAL */
+.agro-op-main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.agro-op-header {
+  margin-bottom: 30px;
+}
+
+.agro-op-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.agro-op-header p {
+  color: var(--op-text-muted);
+  margin-top: 5px;
+}
+
+/* TARJETA FORMULARIO (GLASSMORPHISM SUAVE) */
+.agro-op-card {
+  background: var(--op-surface);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--op-border);
+  max-width: 600px;
+}
+
+.agro-op-form-group {
+  margin-bottom: 20px;
+}
+
+.agro-op-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--op-text-main);
+}
+
+.agro-op-input, .agro-op-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--op-border);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s;
+  background: #f8fafc;
+}
+
+.agro-op-input:focus, .agro-op-select:focus {
+  outline: none;
+  border-color: var(--op-primary);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.agro-op-btn {
+  background: var(--op-primary);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.agro-op-btn:hover {
+  background: var(--op-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* ESTADOS DE ÉXITO */
+.agro-op-alert {
+  padding: 16px;
+  border-radius: 10px;
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #34d399;
+  margin-bottom: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

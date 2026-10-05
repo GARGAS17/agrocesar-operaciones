@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba de Contrato: MFE Operaciones</title>
+  <style>
+    body { font-family: sans-serif; background: #e2e8f0; margin: 0; padding: 20px; }
+    .sandbox-header { background: #1e293b; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    button { background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+    #log { background: #000; color: #10b981; padding: 15px; font-family: monospace; border-radius: 8px; margin-top: 20px; height: 150px; overflow-y: auto;}
+  </style>
+</head>
+<body>
+
+  <div class="sandbox-header">
+    <h2>Simulador App Shell -> Probando MFE Operaciones (React)</h2>
+    <button onclick="window.mountAgroOperaciones('mfe-root')">Montar Admin</button>
+    <button onclick="window.unmountAgroOperaciones('mfe-root')" style="background: #ef4444;">Desmontar</button>
+  </div>
+
+  <!-- Contenedor del MFE -->
+  <div id="mfe-root" style="border: 2px dashed #94a3b8; min-height: 400px;"></div>
+
+  <!-- Consola de Eventos -->
+  <div id="log">Logs del Event Bus de Window...<br/></div>
+
+  <script type="module" src="./main.js"></script>
+
+  <script>
+    const log = document.getElementById('log');
+    
+    // El Shell prueba que el MFE emita el evento cuando el productor guarde el formulario
+    window.addEventListener('producto:publicado', (e) => {
+      log.innerHTML += `\n[${new Date().toLocaleTimeString()}] ✅ MFE Emitió: producto:publicado -> ${e.detail.nombre} ($${e.detail.precio})`;
+      log.scrollTop = log.scrollHeight;
+    });
+
+    // Autoload
+    setTimeout(() => window.mountAgroOperaciones('mfe-root'), 800);
+  </script>
+
+</body>
+</html>
